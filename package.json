@@ -1,0 +1,30 @@
+{
+  "name": "makara-languagepackpath",
+  "version": "1.0.0",
+  "description": "A helper middleware to expose the path to language packs to rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krakenjs/makara-languagepackpath.git"
+  },
+  "keywords": [
+    "makara",
+    "i18n",
+    "middleware"
+  ],
+  "author": "Aria Stewart <ariastewart@paypal.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/krakenjs/makara-languagepackpath/issues"
+  },
+  "homepage": "https://github.com/krakenjs/makara-languagepackpath",
+  "dependencies": {
+    "bcp47": "^1.1.2"
+  },
+  "devDependencies": {
+    "tape": "^4.0.0"
+  }
+}
