@@ -28,5 +28,6 @@ test('languge pack path', function(t) {
             regular: null
         }
     }), 'en-XC/_languagepack.js');
+    t.equal(mlp.languagePackPath('en-XC', true), 'en-XC/_languagepack');
     t.end();
 });
