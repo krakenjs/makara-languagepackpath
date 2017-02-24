@@ -16,7 +16,7 @@ module.exports = {
 
 };
 
-function languagePackPath(locale, nosuffix, strict) {
+function languagePackPath(locale, nosuffix) {
     if (!locale) throw new Error("Must specify a locale");
     // Handle PayPal-style input
     if (locale.language && locale.country) locale = locale.language + '-' + locale.country;
