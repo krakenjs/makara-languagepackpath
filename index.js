@@ -1,21 +1,22 @@
 "use strict";
 
 var bcp47 = require('bcp47');
-
+var localeContext = 'locale';
 module.exports = {
     languagePackPath: languagePackPath,
     middleware: function(options) {
         var nosuffix = options && options.nosuffix;
+        localeContext = options.localeContext || localeContext;
         return function (req, res, next) {
             if (!res.locals.makara) res.locals.makara = {};
-            res.locals.makara.languagePackPath = languagePackPath(res.locals.locale, nosuffix);
+            res.locals.makara.languagePackPath = languagePackPath(res.locals[localeContext], nosuffix);
             next();
         };
     }
 
 };
 
-function languagePackPath(locale, nosuffix) {
+function languagePackPath(locale, nosuffix, strict) {
     if (!locale) throw new Error("Must specify a locale");
     // Handle PayPal-style input
     if (locale.language && locale.country) locale = locale.language + '-' + locale.country;
